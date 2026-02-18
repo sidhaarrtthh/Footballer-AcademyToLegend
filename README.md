@@ -9,11 +9,13 @@ A text-based football career simulation built in Python. Progress from academy p
 - Aging system
 - Club progression system
 - Retirement
+- Match Rating System
 
 ## Current Version
-Pre-Alpha 0.8
+Alpha 1.0
 
 ## Planned Features 
-- Match rating system
 - injuries
+- Commentaries
+- Player form
 
