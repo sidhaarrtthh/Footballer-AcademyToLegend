@@ -9,12 +9,20 @@ match_time = random.randint(1,95)
 
 
 
-print('Footballer: Academy to Legend | Pre-Alpha 0.8')
+print('Footballer: Academy to Legend | Alpha 1.0')
+
+print('Welcome to Footballer: Academy to Legend')
+time.sleep(2)
+print('Start as a player in the academy and work you way up to the most elite teams!')
+time.sleep(2)
+print('Make choices and watch your player grow and move clubs')
+time.sleep(2)
+input('Are you ready?\n')
 
 
 
 
-pname = input('enter player name ')
+pname = input('Enter player name:  ')
 player = {'name' : pname , 
           "age" : 18 , 
           'shooting' : 50 ,
@@ -71,15 +79,34 @@ while True:
             time.sleep(1)
             print('Playing match....')
             time.sleep(3)
+            match_goals = 0
+            match_assists = 0
             goal_chance = random.randint(1,100)
             assist_chance = random.randint(1,100)
             if goal_chance <= player['shooting']:
                 player['goals'] += 1
+                match_goals += 1
                 print("You scored a GOAL!")
 
             if assist_chance <= player['passing']:
                 player['assist'] += 1
+                match_assists += 1
                 print("You made an ASSIST!")
+            # MATCH RATING SYSTEM
+            rating = 6 + (match_goals * 1.5) + (match_assists * 1)
+
+            if rating > 10:
+                rating = 10
+
+            print("Match Rating:", round(rating, 1), "/ 10")
+            if rating >= 9:
+                print('Man of the match!')
+
+            elif rating >=7:
+                print('Good game!')
+            elif rating ==6:
+                print('You barely had an impact.')
+            time.sleep(2)
 
 
 
@@ -142,5 +169,3 @@ while True:
 
 
 print('Thank You for playing Footabller : Academy to Legend.')
-                
-    
