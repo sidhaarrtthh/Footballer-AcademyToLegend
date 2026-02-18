@@ -7,12 +7,11 @@ A text-based football career simulation built in Python. Progress from academy p
 - Goals & assists tracking
 - Multi-season career
 - Aging system
+- Club progression system
 
 ## Current Version
-Pre-Alpha 0.5
+Pre-Alpha 0.7
 
-## Planned Features
-- Club promotion system
-- Transfers
+## Planned Features for next update
 - Retirement
-- GUI version
+
