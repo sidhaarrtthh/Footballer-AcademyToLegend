@@ -9,7 +9,7 @@ match_time = random.randint(1,95)
 
 
 
-print('Footballer: Academy to Legend | Pre-Alpha 0.7')
+print('Footballer: Academy to Legend | Pre-Alpha 0.8')
 
 
 
@@ -98,32 +98,49 @@ while True:
     if current_club in academy_club:
         if goals >= 1:
             player['club'] = random.choice(local_club)
-            print("🎉 PROMOTED! You have been signed by", player['club'])
+            print("Scouts were impressed! You have been signed by", player['club'])
         else:
             print("No scouts were interested in you. You decided to train at", player['club'], "for another season.")
 
     elif current_club in local_club:
         if goals >= 2:
             player['club'] = random.choice(pro_club)
-            print("🔥 BIG MOVE! You joined", player['club'])
+            print(player['club'] , 'signs' , pname , 'after an impressive season.' , " You joined", player['club'])
         else:
             print("Contract extended at", player['club'], "for another season.")
 
     elif current_club in pro_club:
         if goals >= 5:
             player['club'] = random.choice(prem_club)
-            print("🌟 ELITE LEVEL! You signed for", player['club'])
+            print("SHOCKING MOVE! " , player['club'], ' signs ' , pname , 'for a HISTORIC transfer fee' ,  "You signed for", player['club'])
         else:
             print("Contracted Extended at", player['club'], "for another season.")
 
-    #reset season stats
+    # NOW reset season stats
     player['goals'] = 0
     player['assist'] = 0
     month = 1
     season +=1
+    cont = input("\nDo you want to play another season? (y/n): ")
 
+    if cont.lower() != 'y':
+        print("\n--- RETIREMENT ---")
+        print(player['name'], "has announced retirement from football.")
+        print("Final club:", player['club'])
+        print("Final age:", player['age'])
+        break
+    if player['age'] >= 35:
+        chance = random.randint(1, 100)
+
+        if chance <= 40:
+            print("\n--- FORCED RETIREMENT ---")
+            print("You failed your medical evaluation due to concerns regarding your age.")
+            print("The International Football Federation has processed your retirement.")
+            print("Final club:", player['club'])
+            print("Final age:", player['age'])
+            break
+
+
+print('Thank You for playing Footabller : Academy to Legend.')
                 
-    
- 
-
     
