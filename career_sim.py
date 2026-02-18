@@ -1,11 +1,15 @@
 import random
 import time
+academy_club  = ['Northwells Academy' , 'Manchester Young Boys' , 'Northern Athletic Academy' , 'Southwells Academy']
+local_club = ['Seaside FC' , 'Modern Athletics FC' , 'Newtown FC']
+pro_club = ['Northwells FC' , 'Southwells FC', 'Northern Athletic FC' , 'Bluco FC']
+prem_club = ['Superstars FC' , 'Premier XI' , 'Westside FC' , 'Toppers FC']
 
 match_time = random.randint(1,95)
 
 
 
-print('Footballer: Academy to Legend | Pre-Alpha 0.5')
+print('Footballer: Academy to Legend | Pre-Alpha 0.7')
 
 
 
@@ -17,7 +21,7 @@ player = {'name' : pname ,
           'passing' : 50 ,
           'pace' : 50 ,
           'handling' : 50 ,
-          'club' : 'academy',
+          'club' : random.choice(academy_club),
           'goals' : 0,
           'assist' : 0}
                         
@@ -27,8 +31,11 @@ season = 1
 
 while True:
     print(f"\n--- SEASON {season} ---")
+    print('Current Club : ' , player['club'])
+    input('Enter any key to start the season.')
     while month <= 12:
         print('Month ' , month)
+        
         print('what do you want to do : ')
         print('1.Train Shooting ')
         print('2.Train Passing')
@@ -74,19 +81,49 @@ while True:
                 player['assist'] += 1
                 print("You made an ASSIST!")
 
+
+
     print("\n--- SEASON OVER ---")
     print("Goals scored:", player['goals'])
     print("Assists:", player['assist'])
     print("Final stats:", player)
+
     player['age'] += 1
     print("You are now age:", player['age'])
+
+    # PROMOTION SYSTEM
+    goals = player['goals']
+    current_club = player['club']
+
+    if current_club in academy_club:
+        if goals >= 1:
+            player['club'] = random.choice(local_club)
+            print("🎉 PROMOTED! You have been signed by", player['club'])
+        else:
+            print("No scouts were interested in you. You decided to train at", player['club'], "for another season.")
+
+    elif current_club in local_club:
+        if goals >= 2:
+            player['club'] = random.choice(pro_club)
+            print("🔥 BIG MOVE! You joined", player['club'])
+        else:
+            print("Contract extended at", player['club'], "for another season.")
+
+    elif current_club in pro_club:
+        if goals >= 5:
+            player['club'] = random.choice(prem_club)
+            print("🌟 ELITE LEVEL! You signed for", player['club'])
+        else:
+            print("Contracted Extended at", player['club'], "for another season.")
+
+    #reset season stats
     player['goals'] = 0
     player['assist'] = 0
     month = 1
-    season += 1
-    cont = input("Play another season? (y/n): ")
+    season +=1
 
-    if cont.lower() != 'y':
-        break
+                
+    
  
+
     
