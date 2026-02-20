@@ -1,5 +1,9 @@
 # Footballer-AcademyToLegend
 A text-based football career simulation built in Python. Progress from academy prospect to legendary player through training, matches, and multi-season career growth. Currently in Alpha.
+
+## Current Version
+Alpha 1.1
+
 ## Features
 - Player creation
 - Monthly training
@@ -7,16 +11,21 @@ A text-based football career simulation built in Python. Progress from academy p
 - Goals & assists tracking
 - Multi-season career
 - Aging system
-- Club progression system
+- Club Transfer System
 - Retirement
 - Match Rating System
-
-## Current Version
-Alpha 1.0
+  
 
 ## Planned Features 
 - Injuries
-- Revamped Transfer System
 - Commentaries
 - Player form
+
+## Changelog
+
+### Alpha 1.1
+- Added transfer choice system
+- Added agent system
+- Minor bug fixes
+- Added play_match() function
 
